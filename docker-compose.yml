@@ -3,6 +3,7 @@ version: "2"
 services:
     service-a:
         build: ./service-a
+        image: ${DOCKER_USER}/$(Build.Repository.Name)_service-a
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
         expose:
@@ -15,6 +16,7 @@ services:
 
     service-b:
         build: ./service-b
+        image: ${DOCKER_USER}/$(Build.Repository.Name)_service-b
         environment:
             - APPINSIGHTS_INSTRUMENTATIONKEY
         expose:
